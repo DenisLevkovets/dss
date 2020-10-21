@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import {store} from "./redux/store";
+import {BrowserRouter} from 'react-router-dom'
+import {Route, Switch} from 'react-router'
+import history from './history'
+import Game from "./Game/Game";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <BrowserRouter history={history}>
+          <Switch>
+              <Route exact path={'/'} component={App}/>
+              <Route path={'/game'} component={Game}/>
+          </Switch>
+      </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

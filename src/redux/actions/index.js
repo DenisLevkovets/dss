@@ -1,5 +1,5 @@
-import counters from './counterActions'
+import game from './gameActions'
 
 export default {
-    counters
+    game
 }
